@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Janela</class>
+ <widget class="QMainWindow" name="Janela">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>VYTDownload</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame{
+	background-color: rgb(68, 71, 90);
+}
+QPushButton, QComboBox{
+	font: 700 italic 10pt &quot;Arial&quot;;
+	background-color: rgba(154, 154, 231, 253);
+	border-radius: 5%;
+	border: 1px solid rgb(40, 42, 54);
+}
+QPushButton::hover, QComboBox::hover{
+	background-color: rgb(163, 163, 244);
+}
+QPushButton::pressed, QComboBox::pressed{
+	font: 700 italic 11pt &quot;Arial&quot;;
+	border: 2px solid rgb(0, 0, 0);
+	background-color: rgb(170, 170, 255);
+}
+QLineEdit{
+	font: italic 10pt &quot;Arial&quot;;
+	color: rgb(173, 82, 135);
+	background-color: rgba(68, 71, 90, 100);
+	border: none;
+	border-bottom: 2px solid rgb(170, 170, 255);
+}
+QLineEdit::hover{
+	border-bottom: 2px solid rgb(163, 163, 244);
+}
+QLineEdit::pressed{
+	border-bottom: 2px solid rgb(170, 170, 255);
+}
+QListWidget{
+	color: rgb(173, 82, 135);
+	border-radius: 5%;
+	background-color: rgb(82, 86, 109);
+}
+QProgressBar{
+	background-color: rgba(255, 255, 255, 0);
+	color: rgb(68, 71, 90);
+	border-radius: 5px;
+}
+QProgressBar::chunk{
+    border-radius: 5px;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.443227, stop:0 rgba(208, 99, 162, 255), stop:0.988636 rgba(170, 163, 239, 255));
+}
+QStackedWidget{
+	background-color: rgba(255, 255, 255, 0);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QWebEngineView" name="wev_youtube">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>400</width>
+         <height>600</height>
+        </rect>
+       </property>
+       <property name="url">
+        <url>
+         <string>https://www.youtube.com/</string>
+        </url>
+       </property>
+       <property name="zoomFactor">
+        <double>0.900000000000000</double>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="le_link">
+       <property name="geometry">
+        <rect>
+         <x>4</x>
+         <y>230</y>
+         <width>341</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pb_baixar">
+       <property name="geometry">
+        <rect>
+         <x>162</x>
+         <y>270</y>
+         <width>75</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Baixar</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cb_formt_aqrv">
+       <property name="geometry">
+        <rect>
+         <x>348</x>
+         <y>230</y>
+         <width>51</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>MP4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>MP3</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QStackedWidget" name="paginas">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>299</y>
+         <width>381</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="download_unitario">
+        <widget class="QLabel" name="l_thumbnail">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>50</y>
+           <width>341</width>
+           <height>211</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="l_minutos">
+         <property name="geometry">
+          <rect>
+           <x>310</x>
+           <y>242</y>
+           <width>49</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(173, 82, 135);
+background-color: rgba(255, 255, 255, 0);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QProgressBar" name="pgsbar_unitario">
+         <property name="geometry">
+          <rect>
+           <x>134</x>
+           <y>268</y>
+           <width>131</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>10</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="textVisible">
+          <bool>true</bool>
+         </property>
+         <property name="textDirection">
+          <enum>QProgressBar::TopToBottom</enum>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="download_playlist">
+        <widget class="QListWidget" name="lw_playlist_musicas">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>50</y>
+           <width>341</width>
+           <height>211</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Georgia</family>
+           <pointsize>10</pointsize>
+           <italic>true</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoScroll">
+          <bool>false</bool>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="layoutMode">
+          <enum>QListView::SinglePass</enum>
+         </property>
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <property name="uniformItemSizes">
+          <bool>false</bool>
+         </property>
+         <property name="itemAlignment">
+          <set>Qt::AlignHCenter</set>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="l_vin1_back">
+       <property name="geometry">
+        <rect>
+         <x>2</x>
+         <y>120</y>
+         <width>391</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>18</pointsize>
+         <italic>true</italic>
+         <bold>true</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 italic 18pt &quot;Times New Roman&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; color:#ad5287;&quot;&gt;Developed by Vi-n1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="l_vin1_back2">
+       <property name="geometry">
+        <rect>
+         <x>-3</x>
+         <y>122</y>
+         <width>391</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>18</pointsize>
+         <italic>true</italic>
+         <bold>true</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 italic 18pt &quot;Times New Roman&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; text-decoration: underline; color:#aaaaff;&quot;&gt;Developed by Vi-n1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="openExternalLinks">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="l_backgroud_gif">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>400</width>
+         <height>600</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="l_vin1_front">
+       <property name="geometry">
+        <rect>
+         <x>-20</x>
+         <y>120</y>
+         <width>430</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>18</pointsize>
+         <italic>true</italic>
+         <bold>true</bold>
+         <stylestrategy>PreferAntialias</stylestrategy>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 italic 18pt &quot;Times New Roman&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/vi-n1&quot;&gt;&lt;span style=&quot; font-size:36pt; text-decoration: underline; color:#000000;&quot;&gt;Developed by Vi-n1&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="openExternalLinks">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <zorder>l_backgroud_gif</zorder>
+      <zorder>l_vin1_back</zorder>
+      <zorder>le_link</zorder>
+      <zorder>pb_baixar</zorder>
+      <zorder>cb_formt_aqrv</zorder>
+      <zorder>paginas</zorder>
+      <zorder>l_vin1_back2</zorder>
+      <zorder>l_vin1_front</zorder>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
