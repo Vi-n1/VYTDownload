@@ -27,7 +27,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QFrame{
-	background-color: rgb(68, 71, 90);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.42, x2:0, y2:1, stop:0 rgba(53, 58, 75, 255), stop:0.994318 rgba(173, 82, 135, 118));
 }
 QPushButton, QComboBox{
 	font: 700 italic 10pt &quot;Arial&quot;;
