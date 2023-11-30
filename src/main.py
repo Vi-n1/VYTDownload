@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6.QtCore import QUrl
-from PySide6.QtGui import QMovie
 from sys import exit, argv
 
 from Ui.janela_ui import Ui_Janela
@@ -27,11 +26,6 @@ class VYTDownload(QMainWindow, Ui_Janela):
 
         # Instância da classe responsável pelo o download.
         self.youtube = YouTube()
-
-        # Carrega o gif na memória e aplica como "background" no widget l_backgroud_gif.
-        self.gif = QMovie(r'Ui\gif\background.gif')
-        self.l_backgroud_gif.setMovie(self.gif)
-        self.gif.start()
 
     def Autocompletar_url(self, link: QUrl) -> None:
         """
