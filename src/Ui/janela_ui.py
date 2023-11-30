@@ -241,9 +241,6 @@ class Ui_Janela(object):
         )
         self.l_vin1_back2.setAlignment(Qt.AlignCenter)
         self.l_vin1_back2.setOpenExternalLinks(False)
-        self.l_backgroud_gif = QLabel(self.frame_2)
-        self.l_backgroud_gif.setObjectName('l_backgroud_gif')
-        self.l_backgroud_gif.setGeometry(QRect(0, 0, 400, 600))
         self.l_vin1_front = QLabel(self.frame_2)
         self.l_vin1_front.setObjectName('l_vin1_front')
         self.l_vin1_front.setGeometry(QRect(-20, 120, 430, 70))
@@ -254,7 +251,6 @@ class Ui_Janela(object):
         )
         self.l_vin1_front.setAlignment(Qt.AlignCenter)
         self.l_vin1_front.setOpenExternalLinks(True)
-        self.l_backgroud_gif.raise_()
         self.l_vin1_back.raise_()
         self.le_link.raise_()
         self.pb_baixar.raise_()
@@ -305,7 +301,6 @@ class Ui_Janela(object):
                 None,
             )
         )
-        self.l_backgroud_gif.setText('')
         self.l_vin1_front.setText(
             QCoreApplication.translate(
                 'Janela',

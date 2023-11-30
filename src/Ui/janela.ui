@@ -382,19 +382,6 @@ background-color: rgba(255, 255, 255, 0);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="l_backgroud_gif">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>400</width>
-         <height>600</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
       <widget class="QLabel" name="l_vin1_front">
        <property name="geometry">
         <rect>
@@ -427,7 +414,6 @@ background-color: rgba(255, 255, 255, 0);</string>
         <bool>true</bool>
        </property>
       </widget>
-      <zorder>l_backgroud_gif</zorder>
       <zorder>l_vin1_back</zorder>
       <zorder>le_link</zorder>
       <zorder>pb_baixar</zorder>
