@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6.QtCore import QUrl
-from sys import exit, argv
+from sys import exit, argv, executable
+import ctypes
+
 
 from Ui.janela_ui import Ui_Janela
 from download import YouTube
@@ -120,7 +122,14 @@ class VYTDownload(QMainWindow, Ui_Janela):
 
 
 if __name__ == '__main__':
-    app = QApplication(argv)
-    janela = VYTDownload()
-    janela.show()
-    exit(app.exec())
+    # Verifica se esta sendo executado em modo administrador
+    if not ctypes.windll.shell32.IsUserAnAdmin():
+        # Solicitar direitos de administrador e executar com direitos de administrador elevados
+        ctypes.windll.shell32.ShellExecuteW(
+            None, 'runas', executable, argv[0], None, 1
+        )
+
+        app = QApplication(argv)
+        janela = VYTDownload()
+        janela.show()
+        exit(app.exec())
