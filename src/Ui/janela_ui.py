@@ -68,9 +68,12 @@ class Ui_Janela(object):
         Janela.resize(800, 600)
         Janela.setMinimumSize(QSize(800, 600))
         Janela.setMaximumSize(QSize(800, 600))
+        icon = QIcon()
+        icon.addFile('Ui/img/Logo.png', QSize(), QIcon.Normal, QIcon.Off)
+        Janela.setWindowIcon(icon)
         Janela.setStyleSheet(
             'QFrame{\n'
-            '	background-color: qlineargradient(spread:pad, x1:0, y1:0.42, x2:0, y2:1, stop:0 rgba(53, 58, 75, 255), stop:0.994318 rgba(173, 82, 135, 118));\n'
+            '	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(208, 149, 183, 255), stop:0.795455 rgba(88, 0, 239, 255));\n'
             '}\n'
             'QPushButton, QComboBox{\n'
             '	font: 700 italic 10pt "Arial";\n'
@@ -101,8 +104,8 @@ class Ui_Janela(object):
             '}\n'
             'QListWidget{\n'
             '	color: rgb(173, 82, 135);\n'
-            '	borde'
-            'r-radius: 5%;\n'
+            '	bor'
+            'der-radius: 5%;\n'
             '	background-color: rgb(82, 86, 109);\n'
             '}\n'
             'QProgressBar{\n'
@@ -216,48 +219,13 @@ class Ui_Janela(object):
         self.lw_playlist_musicas.setUniformItemSizes(False)
         self.lw_playlist_musicas.setItemAlignment(Qt.AlignHCenter)
         self.paginas.addWidget(self.download_playlist)
-        self.l_vin1_back = QLabel(self.frame_2)
-        self.l_vin1_back.setObjectName('l_vin1_back')
-        self.l_vin1_back.setGeometry(QRect(2, 120, 391, 71))
-        font3 = QFont()
-        font3.setFamilies(['Times New Roman'])
-        font3.setPointSize(18)
-        font3.setBold(True)
-        font3.setItalic(True)
-        font3.setStyleStrategy(QFont.PreferAntialias)
-        self.l_vin1_back.setFont(font3)
-        self.l_vin1_back.setStyleSheet(
-            'font: 700 italic 18pt "Times New Roman";\n'
-            'background-color: rgba(255, 255, 255, 0);'
-        )
-        self.l_vin1_back.setAlignment(Qt.AlignCenter)
-        self.l_vin1_back2 = QLabel(self.frame_2)
-        self.l_vin1_back2.setObjectName('l_vin1_back2')
-        self.l_vin1_back2.setGeometry(QRect(-3, 122, 391, 71))
-        self.l_vin1_back2.setFont(font3)
-        self.l_vin1_back2.setStyleSheet(
-            'font: 700 italic 18pt "Times New Roman";\n'
-            'background-color: rgba(255, 255, 255, 0);'
-        )
-        self.l_vin1_back2.setAlignment(Qt.AlignCenter)
-        self.l_vin1_back2.setOpenExternalLinks(False)
-        self.l_vin1_front = QLabel(self.frame_2)
-        self.l_vin1_front.setObjectName('l_vin1_front')
-        self.l_vin1_front.setGeometry(QRect(-20, 120, 430, 70))
-        self.l_vin1_front.setFont(font3)
-        self.l_vin1_front.setStyleSheet(
-            'font: 700 italic 18pt "Times New Roman";\n'
-            'background-color: rgba(255, 255, 255, 0);'
-        )
-        self.l_vin1_front.setAlignment(Qt.AlignCenter)
-        self.l_vin1_front.setOpenExternalLinks(True)
-        self.l_vin1_back.raise_()
-        self.le_link.raise_()
-        self.pb_baixar.raise_()
-        self.cb_formt_aqrv.raise_()
-        self.paginas.raise_()
-        self.l_vin1_back2.raise_()
-        self.l_vin1_front.raise_()
+        self.label = QLabel(self.frame_2)
+        self.label.setObjectName('label')
+        self.label.setGeometry(QRect(0, 80, 401, 101))
+        self.label.setStyleSheet('background-color: rgba(255, 255, 255, 0);')
+        self.label.setPixmap(QPixmap('Ui/img/nome.png'))
+        self.label.setScaledContents(True)
+        self.label.setOpenExternalLinks(True)
 
         self.horizontalLayout.addWidget(self.frame_2)
 
@@ -287,26 +255,5 @@ class Ui_Janela(object):
 
         self.l_thumbnail.setText('')
         self.l_minutos.setText('')
-        self.l_vin1_back.setText(
-            QCoreApplication.translate(
-                'Janela',
-                '<html><head/><body><p align="center"><span style=" font-size:36pt; color:#ad5287;">Developed by Vi-n1</span></p></body></html>',
-                None,
-            )
-        )
-        self.l_vin1_back2.setText(
-            QCoreApplication.translate(
-                'Janela',
-                '<html><head/><body><p align="center"><span style=" font-size:36pt; text-decoration: underline; color:#aaaaff;">Developed by Vi-n1</span></p></body></html>',
-                None,
-            )
-        )
-        self.l_vin1_front.setText(
-            QCoreApplication.translate(
-                'Janela',
-                '<html><head/><body><p align="center"><a href="https://github.com/vi-n1"><span style=" font-size:36pt; text-decoration: underline; color:#000000;">Developed by Vi-n1</span></a></p></body></html>',
-                None,
-            )
-        )
 
     # retranslateUi

@@ -25,9 +25,13 @@
   <property name="windowTitle">
    <string>VYTDownload</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>img/Logo.png</normaloff>img/Logo.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">QFrame{
-	background-color: qlineargradient(spread:pad, x1:0, y1:0.42, x2:0, y2:1, stop:0 rgba(53, 58, 75, 255), stop:0.994318 rgba(173, 82, 135, 118));
+	background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(208, 149, 183, 255), stop:0.795455 rgba(88, 0, 239, 255));
 }
 QPushButton, QComboBox{
 	font: 700 italic 10pt &quot;Arial&quot;;
@@ -321,106 +325,28 @@ background-color: rgba(255, 255, 255, 0);</string>
         </widget>
        </widget>
       </widget>
-      <widget class="QLabel" name="l_vin1_back">
+      <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>2</x>
-         <y>120</y>
-         <width>391</width>
-         <height>71</height>
+         <x>0</x>
+         <y>80</y>
+         <width>401</width>
+         <height>101</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-         <pointsize>18</pointsize>
-         <italic>true</italic>
-         <bold>true</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
        <property name="styleSheet">
-        <string notr="true">font: 700 italic 18pt &quot;Times New Roman&quot;;
-background-color: rgba(255, 255, 255, 0);</string>
+        <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
        </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; color:#ad5287;&quot;&gt;Developed by Vi-n1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <property name="pixmap">
+        <pixmap>nome.png</pixmap>
        </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="l_vin1_back2">
-       <property name="geometry">
-        <rect>
-         <x>-3</x>
-         <y>122</y>
-         <width>391</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-         <pointsize>18</pointsize>
-         <italic>true</italic>
-         <bold>true</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 italic 18pt &quot;Times New Roman&quot;;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt; text-decoration: underline; color:#aaaaff;&quot;&gt;Developed by Vi-n1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="openExternalLinks">
-        <bool>false</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="l_vin1_front">
-       <property name="geometry">
-        <rect>
-         <x>-20</x>
-         <y>120</y>
-         <width>430</width>
-         <height>70</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Times New Roman</family>
-         <pointsize>18</pointsize>
-         <italic>true</italic>
-         <bold>true</bold>
-         <stylestrategy>PreferAntialias</stylestrategy>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 italic 18pt &quot;Times New Roman&quot;;
-background-color: rgba(255, 255, 255, 0);</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https://github.com/vi-n1&quot;&gt;&lt;span style=&quot; font-size:36pt; text-decoration: underline; color:#000000;&quot;&gt;Developed by Vi-n1&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
        <property name="openExternalLinks">
         <bool>true</bool>
        </property>
       </widget>
-      <zorder>l_vin1_back</zorder>
-      <zorder>le_link</zorder>
-      <zorder>pb_baixar</zorder>
-      <zorder>cb_formt_aqrv</zorder>
-      <zorder>paginas</zorder>
-      <zorder>l_vin1_back2</zorder>
-      <zorder>l_vin1_front</zorder>
      </widget>
     </item>
    </layout>
