@@ -2,6 +2,7 @@
 from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6.QtCore import QUrl
 from sys import exit, argv, executable
+import os
 import ctypes
 
 
@@ -20,16 +21,20 @@ class VYTDownload(QMainWindow, Ui_Janela):
 
         # Capitura o link da pagina clicada.
         self.wev_youtube.urlChanged.connect(
-            lambda url: self.Autocompletar_url(url)
+            lambda url: self.autocompletar_url(url)
         )
 
         # Inicia o processo de download ao ser clicado.
         self.pb_baixar.clicked.connect(self.baixar)
 
+        self.pb_abrir_pasta_download.clicked.connect(
+            lambda: os.system('start .')
+        )
+
         # Instância da classe responsável pelo o download.
         self.youtube = YouTube()
 
-    def Autocompletar_url(self, link: QUrl) -> None:
+    def autocompletar_url(self, link: QUrl) -> None:
         """
         Capitura o link do vídeo clicado e defini como o texo do widget :obj:`le_link`.
 

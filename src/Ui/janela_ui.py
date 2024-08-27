@@ -226,6 +226,23 @@ class Ui_Janela(object):
         self.label.setPixmap(QPixmap('Ui/img/nome.png'))
         self.label.setScaledContents(True)
         self.label.setOpenExternalLinks(True)
+        self.pb_abrir_pasta_download = QPushButton(self.frame_2)
+        self.pb_abrir_pasta_download.setObjectName('pb_abrir_pasta_download')
+        self.pb_abrir_pasta_download.setGeometry(QRect(1, 574, 20, 24))
+        self.pb_abrir_pasta_download.setStyleSheet(
+            'QPushButton{\n'
+            '	background-color: rgba(0, 0, 0, 0);\n'
+            '	border: 0px solid rgb(40, 42, 54);\n'
+            '}\n'
+            'QPushButton::hover{\n'
+            '	background-color: rgb(163, 163, 244);\n'
+            '}\n'
+            'QPushButton::pressed{\n'
+            '	font: 700 italic 11pt "Arial";\n'
+            '	border: 2px solid rgb(0, 0, 0);\n'
+            '	background-color: rgb(170, 170, 255);\n'
+            '}'
+        )
 
         self.horizontalLayout.addWidget(self.frame_2)
 
@@ -255,5 +272,13 @@ class Ui_Janela(object):
 
         self.l_thumbnail.setText('')
         self.l_minutos.setText('')
+        # if QT_CONFIG(tooltip)
+        self.pb_abrir_pasta_download.setToolTip(
+            QCoreApplication.translate(
+                'Janela', 'Abrir pasta de download', None
+            )
+        )
+        # endif // QT_CONFIG(tooltip)
+        self.pb_abrir_pasta_download.setText('📁')
 
     # retranslateUi
