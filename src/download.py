@@ -3,11 +3,11 @@ from PySide6.QtCore import QThread
 from PySide6.QtWidgets import QProgressBar, QLabel, QListWidget
 from PySide6.QtGui import QPixmap
 from requests import get
-import pytube as yt
+import pytubefix as yt
 
 from io import BufferedWriter
 from time import strftime, gmtime
-from os import rename, remove, mkdir
+from os import remove, mkdir
 from os.path import exists
 
 
@@ -157,13 +157,9 @@ class YouTube(QThread):
         )
 
         # Inicia o download.
-        nome_arqv_mp4 = self._objeto_yt.streams.get_audio_only().download(
-            output_path=path
+        self._objeto_yt.streams.get_audio_only().download(
+            output_path=path, mp3=True
         )
-
-        # Renomeando a extensão do arqv de mp4 para mp3.
-        nome_arqv_mp3 = nome_arqv_mp4.replace('mp4', 'mp3')
-        rename(nome_arqv_mp4, nome_arqv_mp3)
 
     def _baixar_video(self):
         """
@@ -175,7 +171,7 @@ class YouTube(QThread):
         )
 
         # Inicia o download.
-        self._objeto_yt.streams.get_highest_resolution().download(
+        self._objeto_yt.streams.get_by_resolution(True).download(
             output_path=path
         )
 
@@ -191,18 +187,18 @@ class YouTube(QThread):
             self._PATH_PLAYLIST, self._objeto_yt.videos[0].author
         )
 
-        for objeto_yt_musica in self._objeto_yt.videos:
+        for url_video, nome_video in zip(
+            self._objeto_yt.video_urls, self._objeto_yt.videos
+        ):
             # Inicia o download.
-            nome_arqv_mp4 = objeto_yt_musica.streams.get_audio_only().download(
-                output_path=path
+            yt.YouTube(
+                url_video, client='ANDROID'
+            ).streams.get_audio_only().download(
+                output_path=path, mp3=True, remove_problematic_character='?'
             )
 
-            # Renomeando a extensão do arqv de mp4 para mp3.
-            nome_arqv_mp3 = nome_arqv_mp4.replace('mp4', 'mp3')
-            rename(nome_arqv_mp4, nome_arqv_mp3)
-
             # Adicionado as música baixadas na exibição.
-            self._lista_widgets.addItem(objeto_yt_musica.title)
+            self._lista_widgets.addItem(nome_video.title)
 
     def _porcentagem_baixada(
         self, stream: BufferedWriter, chunk: bytes, bytes_remaining: int
@@ -232,7 +228,9 @@ class YouTube(QThread):
 
             # Objeto YouTube.
             self._objeto_yt = yt.YouTube(
-                url=self._link, on_progress_callback=self._porcentagem_baixada
+                url=self._link,
+                on_progress_callback=self._porcentagem_baixada,
+                client='ANDROID',
             )
 
             # Atribuindo os minutos no formato 00:00:00.
@@ -263,7 +261,7 @@ class YouTube(QThread):
 
         else:
             # Instância do objeto Playlist.
-            self._objeto_yt = yt.Playlist(self._link)
+            self._objeto_yt = yt.Playlist(self._link, client='ANDROID')
 
             # Iniciando o download.
             self._baixar_playlist()
