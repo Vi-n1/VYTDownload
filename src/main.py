@@ -27,9 +27,8 @@ class VYTDownload(QMainWindow, Ui_Janela):
         # Inicia o processo de download ao ser clicado.
         self.pb_baixar.clicked.connect(self.baixar)
 
-        self.pb_abrir_pasta_download.clicked.connect(
-            lambda: os.system('start .')
-        )
+        # Abre a pasta de instalação/execução.
+        self.pb_abrir_pasta_download.clicked.connect(lambda: os.startfile('.'))
 
         # Instância da classe responsável pelo o download.
         self.youtube = YouTube()
